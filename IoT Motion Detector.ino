@@ -3,15 +3,12 @@
 #include <SinricProSwitch.h>
 #include <SinricProMotionsensor.h>
 
-#define ssid "Lagz House"
-#define password "GODiswatchingyou"
-// #define ssid "_Classified."
-// #define password "183768967"
+#define ssid "_Classified."
+#define password "183768967"
 
 #define appKey "5af02028-425a-430b-8700-5ac9c9701a8c"
 #define appSecret "e7547b6c-b550-4899-85b8-fe9356433de0-8b8430fa-0cf0-417f-b2dc-eaeeda9aa628"
 #define deviceID "633d51fa134b2df11cc36730"
-// #define deviceID "632c13e6fa69c39e7cd0a855"
 
 
 bool powerState = true, lastMotionState = false, sent = false, alarm;
@@ -112,7 +109,7 @@ void buzz() {
 }
 
 void setup() {
-  digitalWrite(D4, LOW);
+  digitalWrite(D4, HIGH);
   Serial.begin(115200);
   pinMode(trig, OUTPUT);
   pinMode(echo, INPUT);
@@ -120,7 +117,7 @@ void setup() {
   pinMode(buzzer, OUTPUT);
   pinMode(D4, OUTPUT);
   setupWifi();
-  digitalWrite(D4, HIGH);
+  digitalWrite(D4, LOW);
 }
 
 void loop() {
